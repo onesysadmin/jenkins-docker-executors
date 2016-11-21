@@ -67,3 +67,12 @@ There are tradeoffs to running docker within docker.
 If you wish to use docker in a build - you can. You can just use the `docker` command from a freestyle build, it will work just like you expected. Don't do anything crazy like try to run this thing itself inside docker, as then you end up in an inception like world and ultimate in limbo. http://inception.davepedu.com/ ;)
 
 This works via the exellent work covered here https://github.com/jpetazzo/dind
+
+## How to build it and run it for PlateCulture
+`docker build .` (when inside of a folder with Dockerfile)
+
+```
+sudo docker run -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /home/core/jenkins:/var/jenkins_home -e "JENKINS_HOME=/var/jenkins_home" \
+  --name jenkins --restart always --privileged #{container_id}
+```
