@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:xenial
 MAINTAINER Alex Sanz <asans@evirtualpost.com>
 
 # expose the port
