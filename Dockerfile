@@ -35,4 +35,4 @@ RUN apt-get update -qq && apt-get -qqy install docker-ce docker-ce-cli container
 # for jenkins
 RUN echo deb https://pkg.jenkins.io/debian binary/ >> /etc/apt/sources.list \
     && wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add -
-RUN apt-get update -qq && apt-get install -qy openjdk-9-jdk jenkins
+RUN apt-get update -qq && apt-get install -qy openjdk-8-jdk jenkins
